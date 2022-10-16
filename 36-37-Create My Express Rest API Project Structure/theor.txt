@@ -1,0 +1,21 @@
+
+first of all google search> npm > npm website jaite hove tarpore ekta ekta search korbo
+
+Essential Packages:have to install 
+1.Packages.json > npm install --y
+2.Express
+3.body-parser
+4.cookie-parser
+5.multer 
+6.jsonwebtoken
+7.mysql driver
+8.mongoose
+9.dotenv
+10.cors
+11.Express-mongo-sanitize
+12.Express-rate-limit
+13.Helmet
+14.HPP
+15.Xss-clean
+
+
