@@ -3,7 +3,8 @@ const express = require("express");
 const app = new express();
 const router = require("./src/routes/api-route");
 
-
+<<<<<<<<< Temporary merge branch 1
+=========
 //Security Middleware Import 
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
@@ -31,15 +32,27 @@ const limiter = rateLimit({
 app.use(limiter);
 
 
+
+
+
+>>>>>>>>> Temporary merge branch 2
+
+
 app.use("/api/v1", router);
 
 
+<<<<<<<<< Temporary merge branch 1
+//Undefined Route
+app.use("*",(req,res)=>{
+  res.status(404).json({status:"fail",data:"Not found"});
+=========
 
 
 
 //Undefined Route
 app.use("*", (req, res) => {
   res.status(404).json({ status: "fail", data: "Not found" });
+>>>>>>>>> Temporary merge branch 2
 })
 
 
