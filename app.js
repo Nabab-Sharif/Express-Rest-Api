@@ -21,14 +21,7 @@ app.use(hpp());
 
 
 
-
-
-
 app.use("/api/v1", router);
-
-
-
-
 
 //Undefined Route
 app.use("*",(req,res)=>{
