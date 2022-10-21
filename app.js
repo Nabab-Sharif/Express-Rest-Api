@@ -11,6 +11,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
 const cors = require("cors");
+const mongoose = require("mongoose");
 
 
 //Security Middleware Implement
@@ -29,6 +30,17 @@ const limiter = rateLimit({
 })
 
 app.use(limiter);
+
+
+//Mongodb Database Connection
+const URI = 'mongodb://127.0.0.1:27017/School'
+const option = { user: '', pass: '' };
+mongoose.connect(URI, option, (error) => {
+  console.log("Connection Success");
+  console.log(error);
+})
+
+
 
 
 app.use("/api/v1", router);
