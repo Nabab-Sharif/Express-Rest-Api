@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const HelloController = require("../controllers/HelloController");
-const StudentsController=require("../controllers/studentsController");
+const StudentsController = require("../controllers/studentsController");
 
 
 
@@ -13,8 +13,8 @@ router.post("/hello-post", HelloController.HelloPost);
 
 
 //Mongooes
-router.post("/InsertStudent",StudentsController.InsertStudent)
+router.post("/InsertStudent", StudentsController.InsertStudent)
+router.get("/ReadStudent", StudentsController.ReadStudent);
 
 
-
-module.exports=router;
+module.exports = router;
