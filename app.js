@@ -13,6 +13,7 @@ const hpp = require("hpp");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+const bodyParser = require("body-parser")
 
 //Security Middleware Implement
 app.use(cors());
@@ -20,7 +21,7 @@ app.use(helmet());
 app.use(mongoSanitize());
 app.use(xss());
 app.use(hpp());
-
+app.use(bodyParser());
 
 //Request Rate Limiting 
 const limiter = rateLimit({
