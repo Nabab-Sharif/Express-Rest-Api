@@ -2,7 +2,7 @@
 const express = require("express");
 const app = new express();
 const router = require("./src/routes/api-route");
-
+const bodyParser = require("body-parser")
 
 //Security Middleware Import 
 const rateLimit = require("express-rate-limit");
@@ -13,7 +13,7 @@ const hpp = require("hpp");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const bodyParser = require("body-parser")
+
 
 //Security Middleware Implement
 app.use(cors());

@@ -30,3 +30,21 @@ exports.ReadStudent = (req, res) => {
     }
   })
 }
+
+
+//Data Update Here
+exports.UpdateStudent = (req, res) => {
+  let id = req.params.id;
+  let Query = { _id: id };
+  let reqBody = req.body;
+
+  StudentsModel.updateOne(Query, reqBody, (err, data) => {
+    if (err) {
+      res.status(400).json({ status: "fail", data: err });
+    } else {
+      res.status(200).json({ status: "success", data: data });
+    }
+    
+  })
+
+}
