@@ -44,7 +44,20 @@ exports.UpdateStudent = (req, res) => {
     } else {
       res.status(200).json({ status: "success", data: data });
     }
-    
+
   })
 
+}
+
+//Data Delete Here
+exports.DeleteStudent = (req, res) => {
+  const id = req.params.id;
+  const Query = { _id: id };
+  StudentsModel.remove(Query, (err, data) => {
+    if (err) {
+      res.status(400).json({ status: "fail", data: err })
+    } else {
+      res.status(200).json({ status: "success", data: data })
+    }
+  })
 }
