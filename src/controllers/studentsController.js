@@ -49,6 +49,7 @@ exports.UpdateStudent = (req, res) => {
 
 }
 
+
 //Data Delete Here
 exports.DeleteStudent = (req, res) => {
   const id = req.params.id;
@@ -61,3 +62,4 @@ exports.DeleteStudent = (req, res) => {
     }
   })
 }
+
