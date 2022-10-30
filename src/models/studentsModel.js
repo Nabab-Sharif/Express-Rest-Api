@@ -4,13 +4,10 @@ const DataSchema = mongoose.Schema(
   {
 
     Name: String,
-    Roll: String,
+    Roll: Number,
     Class: String,
-    Remarks: {type:String,default:"No Remarks"}
+  }, { versionKey: false })
 
-  },{versionKey:false})
-  
 
 const StudentsModel = mongoose.model('students', DataSchema);
-
 module.exports = StudentsModel;
