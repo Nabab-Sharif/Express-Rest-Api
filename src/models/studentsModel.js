@@ -6,6 +6,7 @@ const DataSchema = mongoose.Schema(
     Name: String,
     Roll: Number,
     Class: String,
+
   }, { versionKey: false })
 
 
