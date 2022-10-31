@@ -4,8 +4,12 @@ const mongoose = require("mongoose")
 const DataSchema = mongoose.Schema(
   {
 
-    Name:{type:String,unique:true},
-    Roll:{type:Number,min:6,max:12},
+    Name:{type:String},
+    Roll:{
+      type:Number,
+      min:[6,'Min 6 & Max 12, But Supplied Value is ={VALUE}'],  
+      max:[12,'Min 6 & Max 12, But Supplied Value is ={VALUE}']
+    },
     Class:{type:String,required:true}
 
   }, { versionKey: false })
