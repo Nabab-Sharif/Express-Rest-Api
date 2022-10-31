@@ -4,13 +4,23 @@ const mongoose = require("mongoose")
 const DataSchema = mongoose.Schema(
   {
 
-    Name:{type:String},
-    Roll:{
-      type:Number,
-      min:[6,'Min 6 & Max 12, But Supplied Value is ={VALUE}'],  
-      max:[12,'Min 6 & Max 12, But Supplied Value is ={VALUE}']
+    Name: { type: String },
+    Roll: { type: Number },
+    Mobile: {
+      type: String,
+      validate: {
+        validator: function (value) {
+          if (value.length === 11) {
+            return true
+          } else {
+            return false
+          }
+        },
+        message:"11 Digit Mobile Number Required"
+      }
     },
-    Class:{type:String,required:true}
+
+    Class: { type: String }
 
   }, { versionKey: false })
 
