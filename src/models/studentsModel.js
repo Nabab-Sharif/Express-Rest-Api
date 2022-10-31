@@ -10,13 +10,9 @@ const DataSchema = mongoose.Schema(
       type: String,
       validate: {
         validator: function (value) {
-          if (value.length === 11) {
-            return true
-          } else {
-            return false
-          }
+          return /(^(\+88|0088)?(01){1}[3456789]{1}(\d){8})$/.test(value)
         },
-        message:"11 Digit Mobile Number Required"
+        message: "11 Digit Mobile Number Required"
       }
     },
 
