@@ -1,6 +1,7 @@
 
 const jwt = require('jsonwebtoken');
 
+//Create Token here
 exports.CreateToken = (req, res) => {
 
   const Payload = {
@@ -14,7 +15,7 @@ exports.CreateToken = (req, res) => {
 
 }
 
-
+//Decode Token here
 exports.DecodeToken = (req, res) => {
 
   const Token = req.headers['token-key'];
@@ -31,3 +32,4 @@ exports.DecodeToken = (req, res) => {
 
 
 }
+

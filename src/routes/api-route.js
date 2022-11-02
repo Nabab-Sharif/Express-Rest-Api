@@ -1,28 +1,27 @@
 
-//
-
-const express =require("express");
+const express = require("express");
 const router = express.Router();
 const StudentsController = require("../controllers/studentsController");
-const JWTPractice=require("../controllers/JWTPractice");
+const TokenCreateController = require("../controllers/TokenCreateController");
+const JWTPractice = require("../controllers/JWTPractice");
+const TokenVarifyMiddleware = require("../middleware/TokenVarifyMiddleware");
 
 
 
 
+//Apply JWT Auth
+router.get("/TokenCreate", TokenCreateController.TokenCreate)
 
-//Mongooes
-router.post("/InsertStudent", StudentsController.InsertStudent)
-router.get("/ReadStudent", StudentsController.ReadStudent);
-router.post("/UpdateStudent/:id",StudentsController.UpdateStudent);
-router.get("/DeleteStudent/:id",StudentsController.DeleteStudent);
+router.post("/InsertStudent", TokenVarifyMiddleware, StudentsController.InsertStudent)
+router.get("/ReadStudent", TokenVarifyMiddleware, StudentsController.ReadStudent);
+router.post("/UpdateStudent/:id", TokenVarifyMiddleware, StudentsController.UpdateStudent);
+router.get("/DeleteStudent/:id", TokenVarifyMiddleware, StudentsController.DeleteStudent);
 
 
 
-//Create JWT Token
-router.get("/CreateToken",JWTPractice.CreateToken);
-
-//Decode JWT Token
-router.get("/DecodeToken",JWTPractice.DecodeToken);
+//Practice JWT Encode and Decode
+router.get("/CreateToken", JWTPractice.CreateToken);
+router.get("/DecodeToken", JWTPractice.DecodeToken);
 
 
 
