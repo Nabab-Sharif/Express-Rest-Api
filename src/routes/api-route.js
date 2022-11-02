@@ -3,14 +3,10 @@
 
 const express =require("express");
 const router = express.Router();
-const HelloController = require("../controllers/HelloController");
 const StudentsController = require("../controllers/studentsController");
+const JWTPractice=require("../controllers/JWTPractice");
 
 
-
-//This is my first get routing 
-router.get("/hello-get", HelloController.HelloGet);
-router.post("/hello-post", HelloController.HelloPost);
 
 
 
@@ -19,6 +15,15 @@ router.post("/InsertStudent", StudentsController.InsertStudent)
 router.get("/ReadStudent", StudentsController.ReadStudent);
 router.post("/UpdateStudent/:id",StudentsController.UpdateStudent);
 router.get("/DeleteStudent/:id",StudentsController.DeleteStudent);
+
+
+
+//Create JWT Token
+router.get("/CreateToken",JWTPractice.CreateToken);
+
+//Decode JWT Token
+router.get("/DecodeToken",JWTPractice.DecodeToken);
+
 
 
 module.exports = router;
